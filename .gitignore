@@ -1,0 +1,42 @@
+# Data outputs
+*.parquet
+*.xlsx
+*.xls
+*.csv
+*.zip
+*.txt
+
+# Keep source code and config
+!*.ipynb
+*NDC DartMart Notebook.ipynb
+*config.py
+!requirements.txt
+!README.md
+!.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
