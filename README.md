@@ -12,13 +12,13 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 
 ## Roadmap
 
-### Current (v1.0)
+### Current (v1.0.3)
 - FDA NDC Directory product and package files (active, unfinished, excluded, and compound)
 - Clean dimensional model with consistent keys and standardized NDC11
 - DuckDB-based queries and Jupyter notebooks for exploration
+- RxNorm crosswalks and concept relationships
 
 ### Near-term
-- RxNorm crosswalks and concept relationships
 - WHO ATC hierarchy for therapeutic classification
 - Basic quality checks and data profiling notebooks
 - Improved documentation of grain, keys, and load process

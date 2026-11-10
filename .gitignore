@@ -13,6 +13,7 @@
 !requirements.txt
 !README.md
 !.gitignore
+!DATA_DICTIONARY.md
 
 # Python
 __pycache__/
