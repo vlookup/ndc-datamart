@@ -1,10 +1,10 @@
 # NDC-DataMart
 
-A dimensional data mart built from the FDA NDC Directory to support pharmacy reference data and coverage analysis. Designed as an extensible foundation for incorporating additional public pharmacy and drug data sources over time.
+A dimensional data mart built from the FDA NDC Directory and public pharmacy pricing sources to support pharmacy reference data, coverage analysis, and benchmark pricing. Designed as an extensible foundation for incorporating additional public pharmacy and drug data sources over time.
 
 ## Purpose
 
-Establish a clean, queryable model of FDA NDC product and package information across active, compounded, and excluded categories. The structure is intended to support ongoing expansion with other public pharmacy datasets.
+Establish a clean, queryable model of FDA NDC product and package information across active, compounded, and excluded categories, enriched with public benchmark pricing. The structure is intended to support ongoing expansion with other public pharmacy datasets.
 
 ## Vision
 
@@ -12,32 +12,38 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 
 ## Roadmap
 
-### Current (v1.0.4)
+### Current (v1.0.5)
 - FDA NDC Directory product and package files (active, unfinished, excluded, and compound)
 - Clean dimensional model with consistent keys and standardized NDC11
 - DuckDB-based queries and Jupyter notebooks for exploration
 - RxNorm crosswalks and concept relationships
 - WHO ATC hierarchy for therapeutic classification
+- CMS NADAC (National Average Drug Acquisition Cost) benchmark pricing dimension
+- Package + Product + NADAC join with package-level cost estimation
 - Basic quality checks and data profiling notebooks
 - Improved documentation of grain, keys, and load process
 
 ### Near-term
-- NCPDP or other public benchmark pricing sources
+- Additional public benchmark pricing sources (e.g., historical NADAC snapshots)
+- FDA Orange Book patent and exclusivity data
+- Refinement of package quantity estimation logic and override table
+- Simple coverage and savings analysis examples
 
 ### Longer-term
-- FDA Orange Book patent and exclusivity data
 - Historical and current-state pricing snapshots
-- Simple coverage and utilization analysis examples
 - Additional public pharmacy and drug reference sources as they become available
+- Expanded utilization and coverage analysis examples
 
 ## Data Sources
 
 - [FDA NDC Directory](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)
+- [RxNorm / RxNav (NLM)](https://lhncbc.nlm.nih.gov/RxNav/)
+- [CMS NADAC (National Average Drug Acquisition Cost)](https://data.medicaid.gov/dataset/fbb83258-11c7-47f5-8b18-5f8e79f7e704)
 - Additional public pharmacy and drug reference sources (planned)
 
 ## Status
 
-In progress. Current focus is on the FDA NDC source files and the initial dimensional model.
+In progress. Current focus is on the FDA NDC source files, the initial dimensional model, and the NADAC benchmark pricing dimension.
 
 ## Tools
 
@@ -47,7 +53,7 @@ In progress. Current focus is on the FDA NDC source files and the initial dimens
 
 ## Disclaimer
 
-This is a personal learning and portfolio project. It is not an official FDA product, is not intended for clinical or production use, and may contain gaps or inaccuracies. Data is pulled from public sources and transformed for educational and exploratory purposes.
+This is a personal learning and portfolio project. It is not an official FDA or CMS product, is not intended for clinical or production use, and may contain gaps or inaccuracies. Data is pulled from public sources and transformed for educational and exploratory purposes.
 
 ## Contributing
 
