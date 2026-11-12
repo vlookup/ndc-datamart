@@ -12,7 +12,7 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 
 ## Roadmap
 
-### Current (v1.0.6)
+### Current (v1.0.7)
 - FDA NDC Directory product and package files (active, unfinished, excluded, and compound)
 - Clean dimensional model with consistent keys and standardized NDC11
 - DuckDB-based queries and Jupyter notebooks for exploration
@@ -21,11 +21,12 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 - CMS NADAC (National Average Drug Acquisition Cost) current benchmark pricing dimension
 - Historical NADAC dimension (yearly datasets)
 - Package + Product + NADAC join with package-level cost estimation
+- FDA Orange Book products, patents, and exclusivity tables
+- Therapeutic equivalence view for generic substitution analysis
 - Basic quality checks and data profiling notebooks
 - Improved documentation of grain, keys, and load process
 
 ### Near-term
-- FDA Orange Book patent and exclusivity data
 - FDA Purple Book biologic patent and exclusivity data
 - CMS Medicare Part D Formulary Data
 
@@ -37,11 +38,12 @@ Nothing planned at this time. Recommendations for additional datasets or analysi
 - [FDA NDC Directory](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)
 - [RxNorm / RxNav (NLM)](https://lhncbc.nlm.nih.gov/RxNav/)
 - [CMS NADAC (National Average Drug Acquisition Cost)](https://data.medicaid.gov/dataset/fbb83258-11c7-47f5-8b18-5f8e79f7e704)
+- [FDA Orange Book](https://www.fda.gov/drugs/drug-approvals-and-databases/approved-drug-products-therapeutic-equivalence-evaluations-orange-book)
 - Additional public pharmacy and drug reference sources (planned)
 
 ## Status
 
-In progress. Current focus is on the FDA NDC source files, the dimensional model, and current and historical NADAC pricing dimensions. Near-term additions include Orange Book, Purple Book, and CMS Medicare Part D Formulary data.
+In progress. Current focus is on the FDA NDC source files, the dimensional model, NADAC pricing dimensions, and Orange Book patent/exclusivity data. Near-term additions include Purple Book and CMS Medicare Part D Formulary data.
 
 ## Tools
 

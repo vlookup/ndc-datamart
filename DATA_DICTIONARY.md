@@ -1,4 +1,4 @@
-# Data Dictionary — FDA NDC + RxNorm + Pricing Data Mart
+# Data Dictionary — FDA NDC + RxNorm + Pricing + Orange Book Data Mart
 
 ## Grain & Keys
 
@@ -12,6 +12,9 @@
 | dim_nadac_benchmark | One row per NDC-11 (latest) | ndc11 | Current CMS NADAC price |
 | dim_nadac_historical | One row per NDC-11 + effective date | ndc11, effective_date | Full weekly NADAC history |
 | ndc_package_product_nadac | One row per NDC-11 with current NADAC | ndc11 | Joined package + product + current NADAC with cost estimate |
+| orangebook_products | One row per application + product number | Appl_No, Product_No | FDA Orange Book product listing |
+| orangebook_patents | One row per application + product + patent | Appl_No, Product_No, Patent_No | Orange Book patent records |
+| orangebook_exclusivity | One row per application + product + exclusivity | Appl_No, Product_No, Exclusivity_Code | Orange Book exclusivity records |
 
 ## package
 
@@ -140,6 +143,53 @@
 | corresponding_generic_nadac | Corresponding generic NADAC |
 | nadac_as_of_date | As-of date of the NADAC file |
 
+## orangebook_products
+
+| Field | Description |
+|-------|-------------|
+| Ingredient | Active ingredient(s) |
+| DF;Route | Dosage form and route of administration |
+| Trade_Name | Proprietary / trade name |
+| Applicant | Short applicant name |
+| Strength | Product strength |
+| Appl_Type | Application type (N = NDA, A = ANDA) |
+| Appl_No | Application number |
+| Product_No | Product number within the application |
+| TE_Code | Therapeutic equivalence code |
+| Approval_Date | Product approval date |
+| RLD | Reference Listed Drug flag |
+| RS | Reference Standard flag |
+| Type | RX, OTC, or DISCN |
+| Applicant_Full_Name | Full applicant / manufacturer name |
+| loaded_at | Timestamp when the row was loaded |
+
+## orangebook_patents
+
+| Field | Description |
+|-------|-------------|
+| Appl_Type | Application type (N = NDA, A = ANDA) |
+| Appl_No | Application number |
+| Product_No | Product number within the application |
+| Patent_No | Patent number |
+| Patent_Expire_Date_Text | Patent expiration date (text) |
+| Drug_Substance_Flag | Drug substance patent flag |
+| Drug_Product_Flag | Drug product patent flag |
+| Patent_Use_Code | Patent use code |
+| Delist_Flag | Patent delist request flag |
+| Submission_Date | Patent submission date |
+| loaded_at | Timestamp when the row was loaded |
+
+## orangebook_exclusivity
+
+| Field | Description |
+|-------|-------------|
+| Appl_Type | Application type (N = NDA, A = ANDA) |
+| Appl_No | Application number |
+| Product_No | Product number within the application |
+| Exclusivity_Code | Exclusivity code |
+| Exclusivity_Date | Exclusivity expiration date |
+| loaded_at | Timestamp when the row was loaded |
+
 ## TTY Lookup
 
 | tty | term_type |
@@ -170,4 +220,4 @@ The quality checks validate:
 - Duplicate detection on primary keys
 - Referential integrity between package and product
 - Row counts and basic distribution summaries
-- Source vs. parquet row counts for NADAC loads
+- Source vs. parquet row counts for NADAC and Orange Book loads
