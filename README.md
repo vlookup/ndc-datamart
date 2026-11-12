@@ -12,27 +12,25 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 
 ## Roadmap
 
-### Current (v1.0.5)
+### Current (v1.0.6)
 - FDA NDC Directory product and package files (active, unfinished, excluded, and compound)
 - Clean dimensional model with consistent keys and standardized NDC11
 - DuckDB-based queries and Jupyter notebooks for exploration
 - RxNorm crosswalks and concept relationships
 - WHO ATC hierarchy for therapeutic classification
-- CMS NADAC (National Average Drug Acquisition Cost) benchmark pricing dimension
+- CMS NADAC (National Average Drug Acquisition Cost) current benchmark pricing dimension
+- Historical NADAC dimension (yearly datasets)
 - Package + Product + NADAC join with package-level cost estimation
 - Basic quality checks and data profiling notebooks
 - Improved documentation of grain, keys, and load process
 
 ### Near-term
-- Additional public benchmark pricing sources (e.g., historical NADAC snapshots)
 - FDA Orange Book patent and exclusivity data
-- Refinement of package quantity estimation logic and override table
-- Simple coverage and savings analysis examples
+- FDA Purple Book biologic patent and exclusivity data
+- CMS Medicare Part D Formulary Data
 
 ### Longer-term
-- Historical and current-state pricing snapshots
-- Additional public pharmacy and drug reference sources as they become available
-- Expanded utilization and coverage analysis examples
+Nothing planned at this time. Recommendations for additional datasets or analysis ideas are welcome in the comments or via issues.
 
 ## Data Sources
 
@@ -43,7 +41,7 @@ Build a lightweight, open pharmacy reference data mart that makes it easier to a
 
 ## Status
 
-In progress. Current focus is on the FDA NDC source files, the initial dimensional model, and the NADAC benchmark pricing dimension.
+In progress. Current focus is on the FDA NDC source files, the dimensional model, and current and historical NADAC pricing dimensions. Near-term additions include Orange Book, Purple Book, and CMS Medicare Part D Formulary data.
 
 ## Tools
 
