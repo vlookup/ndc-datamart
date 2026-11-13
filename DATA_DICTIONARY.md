@@ -1,4 +1,4 @@
-# Data Dictionary — FDA NDC + RxNorm + Pricing + Orange Book Data Mart
+# Data Dictionary — FDA NDC + RxNorm + Pricing + Orange Book + Purple Book Data Mart
 
 ## Grain & Keys
 
@@ -15,6 +15,7 @@
 | orangebook_products | One row per application + product number | Appl_No, Product_No | FDA Orange Book product listing |
 | orangebook_patents | One row per application + product + patent | Appl_No, Product_No, Patent_No | Orange Book patent records |
 | orangebook_exclusivity | One row per application + product + exclusivity | Appl_No, Product_No, Exclusivity_Code | Orange Book exclusivity records |
+| purplebook | One row per biologic / biosimilar product | BLA Number, Product ID (or Proprietary Name + Proper Name) | FDA Purple Book licensed biologics and biosimilars |
 
 ## package
 
@@ -190,6 +191,28 @@
 | Exclusivity_Date | Exclusivity expiration date |
 | loaded_at | Timestamp when the row was loaded |
 
+## purplebook
+
+| Field | Description |
+|-------|-------------|
+| Proprietary Name | Brand / proprietary name |
+| Proper Name | Non-proprietary / proper name |
+| BLA Number | Biologics License Application number |
+| License Type | License type (e.g., 351(a), 351(k)) |
+| Strength | Product strength |
+| Dosage Form | Dosage form |
+| Route of Administration | Route of administration |
+| Product Presentation | Product presentation / packaging |
+| Marketing Status | Current marketing status |
+| Licensure Date | Date of licensure |
+| First Licensure Date | Date of first licensure |
+| Reference Product Exclusivity Expiry Date | Reference product exclusivity expiry |
+| First Interchangeable Exclusivity Expiry Date | First interchangeable exclusivity expiry |
+| Reference Product Proper Name | Proper name of the reference product |
+| Reference Product Proprietary Name | Proprietary name of the reference product |
+| Supplemental Applications | Related supplemental applications |
+| loaded_at | Timestamp when the row was loaded |
+
 ## TTY Lookup
 
 | tty | term_type |
@@ -220,4 +243,4 @@ The quality checks validate:
 - Duplicate detection on primary keys
 - Referential integrity between package and product
 - Row counts and basic distribution summaries
-- Source vs. parquet row counts for NADAC and Orange Book loads
+- Source vs. parquet row counts for NADAC, Orange Book, and Purple Book loads
